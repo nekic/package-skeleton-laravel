@@ -182,7 +182,7 @@ function searchCommitsForGitHubUsername(): string
         return [
             'name' => $name,
             'email' => $email,
-            'isMatch' => !empty($name) && !empty($email) && strtolower($name) === $authorName && ! str_contains($name, '[bot]'),
+            'isMatch' => ! empty($name) && ! empty($email) && strtolower($name) === $authorName && ! str_contains($name, '[bot]'),
         ];
     }, $committersLines), fn ($item) => $item['isMatch']);
 
